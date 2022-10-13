@@ -54,6 +54,7 @@ body {
   font-size: 1.06rem;
   font-weight: 500;
   border-radius: 4px;
+  letter-spacing: 1.4px;
   border: 1px solid #aaa;
   padding: 0 2.8rem 0 1rem;
 }
@@ -116,6 +117,14 @@ body {
   align-items: center;
   margin-bottom: 1rem;
   width: calc(100% / 2);
+}
+
+.options .option:first-child {
+  pointer-events: none;
+}
+
+.options .option:first-child input {
+  opacity: 0.7;
 }
 
 .options .option input {
