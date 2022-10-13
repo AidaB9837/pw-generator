@@ -1,6 +1,7 @@
 /* ----------- SET PASSWORD OPTIONS AND AT THE CLICK EVENT, GENERATE PASSWORD & SHOW IT START ----------- */
 const lengthSlider = document.querySelector(".pass-length input"); //input element about pw length
 const options = document.querySelectorAll(".option input"); //option's checkbox
+const copyIcon = document.querySelector(".input-box span"); //icon to copy generated password
 const pwInput = document.querySelector(".input-box input"); //input element that show generated pw
 const pwSecureIndicator = document.querySelector(".pass-indicator"); //element about pw security level indicator
 const generateBtn = document.querySelector(".generate-btn"); //button to generate pw
@@ -93,6 +94,18 @@ const updateSlider = () => {
 
 updateSlider();
 
+const copyPw = () => {
+  //copying generated password
+  navigator.clipboard.writeText(pwInput.value);
+  //changing copy icon to tick icon
+  copyIcon.innerHTML = "check";
+  //after 2000ms, changing tick icon back to copy icon
+  setTimeout(() => {
+    copyIcon.innerHTML = "copy_all";
+  }, 2000);
+};
+
 lengthSlider.addEventListener("input", updateSlider);
 generateBtn.addEventListener("click", generatePassword);
+copyIcon.addEventListener("click", copyPw);
 /* ------------ SET PASSWORD OPTIONS AND AT THE CLICK EVENT, GENERATE PASSWORD & SHOW IT END ------------ */
