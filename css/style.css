@@ -8,4 +8,140 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+:root {
+  --bg-blue: #4285f4;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(#c193c5, #7bc6cc);
+}
 /* General Rules End */
+
+/* Password Generator Container Start */
+.container {
+  width: 450px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+.container h2 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding: 1rem 1.7rem;
+  border-bottom: 1px solid #d4dbe5;
+}
+/* Password Generator Container End */
+
+/* Display Generated Password Start */
+.wrapper {
+  margin: 1.25rem 1.7rem;
+}
+
+.wrapper .input-box {
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  height: 53px;
+  color: #000;
+  background: none;
+  font-size: 1.06rem;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  padding: 0 2.8rem 0 1rem;
+}
+
+.input-box span {
+  position: absolute;
+  right: 13px;
+  cursor: pointer;
+  line-height: 53px;
+  color: #707070;
+}
+/* Display Generated Password End */
+
+/* Password Security Indicator Start */
+.wrapper .pass-indicator {
+  width: 100%;
+  height: 4px;
+  position: relative;
+  background: #dfdfdf;
+  margin-top: 0.7rem;
+  border-radius: 4px;
+}
+
+.pass-indicator::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  border-radius: inherit;
+  background: #f1c80b;
+}
+/* Password Security Indicator End */
+
+/* Setting Password's Lenght Start */
+.wrapper .pass-length {
+  margin: 1.5rem 0 1.25rem;
+}
+
+.pass-length .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pass-length input {
+  width: 100%;
+  height: 5px;
+}
+/* Setting Password's Lenght End */
+
+/* Password Setting Start */
+.pass-settings .options {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.pass-settings .options .option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: calc(100% / 2);
+}
+
+.options .option input {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.options .option label {
+  cursor: pointer;
+  padding-left: 0.6rem;
+}
+/* Password Setting End */
+
+/* Generate Button Start */
+.wrapper .generate-btn {
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: var(--bg-blue);
+  font-size: 1rem;
+  padding: 0.9rem 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin: 0.9rem 0 1rem;
+}
+/* Generate Button End */
