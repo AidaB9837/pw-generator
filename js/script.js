@@ -1,8 +1,9 @@
 /* ----------- SET PASSWORD OPTIONS AND AT THE CLICK EVENT, GENERATE PASSWORD & SHOW IT START ----------- */
 const lengthSlider = document.querySelector(".pass-length input"); //input element about pw length
-const generateBtn = document.querySelector(".generate-btn"); //button to generate pw
 const options = document.querySelectorAll(".option input"); //option's checkbox
 const pwInput = document.querySelector(".input-box input"); //input element that show generated pw
+const pwSecureIndicator = document.querySelector(".pass-indicator"); //element about pw security level indicator
+const generateBtn = document.querySelector(".generate-btn"); //button to generate pw
 
 //obj of letters, numbers and symbols
 const characters = {
@@ -65,12 +66,29 @@ const generatePassword = () => {
   pwInput.value = generatedPassword;
 };
 
+const updatePwSecureIndicator = () => {
+  //assign id's value like an attribute of pass-indicator
+  pwSecureIndicator.id =
+    //if the length slider's value is less than or equal to 8
+    lengthSlider.value <= 8
+      ? //id's value is weak
+        "weak"
+      : //if the length slider's value is less than or equal to 16
+      lengthSlider.value <= 16
+      ? //id's value is medium
+        "medium"
+      : //else, id's value is strong
+        "strong";
+};
+
 const updateSlider = () => {
   // show password's length value as counter text
   document.querySelector(".pass-length span").innerHTML = lengthSlider.value;
 
   //run generatePassword fnc & show generated password
   generatePassword();
+
+  updatePwSecureIndicator();
 };
 
 updateSlider();

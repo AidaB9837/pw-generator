@@ -84,7 +84,22 @@ body {
   height: 100%;
   width: 50%;
   border-radius: inherit;
+  transition: width 0.3 ease;
+}
+
+.pass-indicator#weak::before {
+  width: 20%;
+  background: #e64a4a;
+}
+
+.pass-indicator#medium::before {
+  width: 50%;
   background: #f1c80b;
+}
+
+.pass-indicator#strong::before {
+  width: 100%;
+  background: #05cc8a;
 }
 /* Password Security Indicator End */
 
